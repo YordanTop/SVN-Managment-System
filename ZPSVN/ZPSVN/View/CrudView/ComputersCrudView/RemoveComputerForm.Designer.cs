@@ -59,6 +59,7 @@
             // 
             // lineComboBox
             // 
+            this.lineComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lineComboBox.FormattingEnabled = true;
             this.lineComboBox.Location = new System.Drawing.Point(185, 135);
             this.lineComboBox.Name = "lineComboBox";
@@ -68,8 +69,10 @@
             // 
             // computerComboBox
             // 
+            this.computerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.computerComboBox.FormattingEnabled = true;
             this.computerComboBox.Location = new System.Drawing.Point(186, 198);
+            this.computerComboBox.MaxDropDownItems = 3;
             this.computerComboBox.Name = "computerComboBox";
             this.computerComboBox.Size = new System.Drawing.Size(186, 24);
             this.computerComboBox.TabIndex = 9;

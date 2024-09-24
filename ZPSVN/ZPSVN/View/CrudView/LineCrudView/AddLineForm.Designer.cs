@@ -47,6 +47,7 @@
             // lineNameTextBox
             // 
             this.lineNameTextBox.Location = new System.Drawing.Point(175, 135);
+            this.lineNameTextBox.MaxLength = 15;
             this.lineNameTextBox.Name = "lineNameTextBox";
             this.lineNameTextBox.Size = new System.Drawing.Size(186, 22);
             this.lineNameTextBox.TabIndex = 4;

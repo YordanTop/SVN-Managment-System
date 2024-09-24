@@ -51,6 +51,7 @@
             // renameComputerTextBox
             // 
             this.renameComputerTextBox.Location = new System.Drawing.Point(183, 220);
+            this.renameComputerTextBox.MaxLength = 20;
             this.renameComputerTextBox.Name = "renameComputerTextBox";
             this.renameComputerTextBox.Size = new System.Drawing.Size(215, 22);
             this.renameComputerTextBox.TabIndex = 32;
@@ -87,6 +88,7 @@
             // 
             // computerComboBox
             // 
+            this.computerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.computerComboBox.FormattingEnabled = true;
             this.computerComboBox.Location = new System.Drawing.Point(315, 136);
             this.computerComboBox.Name = "computerComboBox";
@@ -95,6 +97,7 @@
             // 
             // lineComboBox
             // 
+            this.lineComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lineComboBox.FormattingEnabled = true;
             this.lineComboBox.Location = new System.Drawing.Point(67, 136);
             this.lineComboBox.Name = "lineComboBox";

@@ -54,6 +54,10 @@ namespace ZPSVN.View.CrudView.LineCrudView
             {
                 MessageBox.Show("Select a computer form the lines!");
             }
+            if (!_lineService.SearchForLine(selectedLine.Name))
+            {
+                MessageBox.Show("This line is removed. Please refresh the form!");
+            }
             else
             {
                 _lineService.RemoveLine(selectedLine);

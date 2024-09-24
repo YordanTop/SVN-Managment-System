@@ -88,5 +88,14 @@ namespace ServiceLayer.Services.CRUD_Services
             }
             return true;
         }
+
+        public bool SearchForComputer(Line line,string name)
+        {
+            foreach(var computer in GetGroup(line))
+            {
+                if(computer.Name.Equals(name)) {  return true; }
+            }
+            return false;
+        }
     }
 }

@@ -50,16 +50,17 @@
             this.timerTextBox.Name = "timerTextBox";
             this.timerTextBox.Size = new System.Drawing.Size(186, 22);
             this.timerTextBox.TabIndex = 9;
+            this.timerTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.timerTextBox_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(83, 103);
+            this.label1.Location = new System.Drawing.Point(106, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 23);
+            this.label1.Size = new System.Drawing.Size(151, 23);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Timer in milliseconds:";
+            this.label1.Text = "Timer in minutes:";
             // 
             // setTimer
             // 

@@ -47,28 +47,28 @@
             this.givePermissionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(582, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(582, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // addingLineToolStripMenuItem
             // 
             this.addingLineToolStripMenuItem.Name = "addingLineToolStripMenuItem";
-            this.addingLineToolStripMenuItem.Size = new System.Drawing.Size(103, 26);
+            this.addingLineToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.addingLineToolStripMenuItem.Text = "Adding Line";
             this.addingLineToolStripMenuItem.Click += new System.EventHandler(this.AddLine);
             // 
             // removingLineToolStripMenuItem
             // 
             this.removingLineToolStripMenuItem.Name = "removingLineToolStripMenuItem";
-            this.removingLineToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.removingLineToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
             this.removingLineToolStripMenuItem.Text = "Removing Line";
             this.removingLineToolStripMenuItem.Click += new System.EventHandler(this.RemoveLine);
             // 
             // givePermissionsToolStripMenuItem
             // 
             this.givePermissionsToolStripMenuItem.Name = "givePermissionsToolStripMenuItem";
-            this.givePermissionsToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
+            this.givePermissionsToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.givePermissionsToolStripMenuItem.Text = "Updating Line";
             this.givePermissionsToolStripMenuItem.Click += new System.EventHandler(this.UpdatePermissions);
             // 
@@ -76,9 +76,9 @@
             // 
             this.crudDisplayPanel.Controls.Add(this.label1);
             this.crudDisplayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crudDisplayPanel.Location = new System.Drawing.Point(0, 30);
+            this.crudDisplayPanel.Location = new System.Drawing.Point(0, 28);
             this.crudDisplayPanel.Name = "crudDisplayPanel";
-            this.crudDisplayPanel.Size = new System.Drawing.Size(582, 423);
+            this.crudDisplayPanel.Size = new System.Drawing.Size(582, 425);
             this.crudDisplayPanel.TabIndex = 1;
             // 
             // label1
@@ -98,9 +98,14 @@
             this.ClientSize = new System.Drawing.Size(582, 453);
             this.Controls.Add(this.crudDisplayPanel);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LineCrudView";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Line Maintaining";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

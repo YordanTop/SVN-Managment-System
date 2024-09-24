@@ -56,6 +56,7 @@
             // 
             // lineComboBox
             // 
+            this.lineComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lineComboBox.FormattingEnabled = true;
             this.lineComboBox.Location = new System.Drawing.Point(175, 135);
             this.lineComboBox.Name = "lineComboBox";

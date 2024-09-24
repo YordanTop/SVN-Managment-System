@@ -49,6 +49,7 @@
             // renameLineTextBox
             // 
             this.renameLineTextBox.Location = new System.Drawing.Point(171, 198);
+            this.renameLineTextBox.MaxLength = 15;
             this.renameLineTextBox.Name = "renameLineTextBox";
             this.renameLineTextBox.Size = new System.Drawing.Size(185, 22);
             this.renameLineTextBox.TabIndex = 26;
@@ -75,6 +76,7 @@
             // 
             // lineComboBox
             // 
+            this.lineComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lineComboBox.FormattingEnabled = true;
             this.lineComboBox.Location = new System.Drawing.Point(170, 135);
             this.lineComboBox.Name = "lineComboBox";

@@ -68,11 +68,16 @@ namespace ZPSVN.View.CrudView.ComputersCrudView
 
         private void RemoveComputer_Click(object sender, EventArgs e)
         {
+            Line selectedLine = LineComboBox.SelectedItem as Line;
             Pctoline selectedPc = ComputerComboBox.SelectedItem as Pctoline;
 
             if (selectedPc == null)
             {
                 MessageBox.Show("Select a computer form the lines!");
+            }else
+            if (!_pctolineService.SearchForComputer(selectedLine, selectedPc.Name))
+            {
+                MessageBox.Show("This computer is removed. Please refresh the form!");
             }
             else
             {

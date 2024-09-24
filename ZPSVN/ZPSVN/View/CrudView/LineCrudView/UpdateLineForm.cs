@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.LinkLabel;
 
 namespace ZPSVN.View.CrudView.LineCrudView
@@ -57,9 +58,14 @@ namespace ZPSVN.View.CrudView.LineCrudView
         {
             Line selectedLine = LineComboBox.SelectedItem as Line;
 
-            if (selectedLine == null || RenameLine.Text == null)
+            if (selectedLine == null ||
+                RenameLine.Text.Equals(String.Empty))
             {
-                MessageBox.Show("Select a line and rename it!");
+                MessageBox.Show($"You must fill the fields!");
+            }else
+            if (_lineService.SearchForLine(RenameLine.Text))
+            {
+                MessageBox.Show($"This computer name is taken!");
             }
             else
             {

@@ -68,11 +68,18 @@ namespace ZPSVN.View.CrudView.ComputersCrudView
 
         private void UpdateComputer(object sender, EventArgs e)
         {
+            Line selectedLine = LineComboBox.SelectedItem as Line;
             Pctoline selectedPc = ComputerComboBox.SelectedItem as Pctoline;
 
-            if (selectedPc == null || RenameComputer.Text == null)
+            if (selectedLine == null ||
+                selectedPc == null ||
+                RenameComputer.Text.Equals(String.Empty))
             {
-                MessageBox.Show("Select a computer form the lines and rename it!");
+                MessageBox.Show($"You must fill the fields!");
+            }else
+            if (_pctolineService.SearchForComputer(selectedLine, RenameComputer.Text))
+            {
+                MessageBox.Show($"This computer name is taken!");
             }
             else
             {

@@ -79,5 +79,14 @@ namespace ServiceLayer.Services.CRUD_Services
             }
             return result;
         }
+
+        public bool SearchForLine(string name)
+        {
+            foreach (var line in GetAll())
+            {
+                if (line.Name.Equals(name)) { return true; }
+            }
+            return false;
+        }
     }
 }

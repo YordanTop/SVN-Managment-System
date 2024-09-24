@@ -21,8 +21,17 @@ namespace ZPSVN.Presentation.TimerPresent
         {
             _view = view;
             _view.SetTimer += SetTimer;
+            _view.CheckKeyCharacter += CheckCharacter;
             _autoRefresh = autoRefresh;
             _refreshLabel = timerLabel;
+        }
+
+        private void CheckCharacter(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void SetTimer(object sender, TimerEventArgs e)
@@ -35,7 +44,7 @@ namespace ZPSVN.Presentation.TimerPresent
             _autoRefresh.Interval = timerService.GetTime();
             _autoRefresh.Start();
 
-            _refreshLabel.Text = $"Project reloading timer: {Convert.ToInt32(TimeSpan.FromMilliseconds(_autoRefresh.Interval).TotalMinutes)} minutes";
+            _refreshLabel.Text = $"Project reloading timer: {Convert.ToInt32(TimeSpan.FromMilliseconds(e.Time).TotalMinutes)} minutes";
 
         }
     }

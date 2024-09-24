@@ -132,12 +132,12 @@ namespace ZPSVN.View
 
         private void MainView_ResetLines(object sender, KeyEventArgs e)
         {
-            ResetLines.Invoke(sender, e);
+            ResetLines?.Invoke(sender, e);
         }
 
         private void AppClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
         {
-            CloseApp.Invoke(sender, e);
+            CloseApp?.Invoke(sender, e);
         }
 
         private void autoRefresh_Tick(object sender, EventArgs e)

@@ -58,9 +58,15 @@ namespace ZPSVN.View.CrudView.ComputersCrudView
                 PcDirectory = this.PcDirectory.Text,
             };
 
-            if(newComputer == null)
+            if(newComputer.Name.Equals(String.Empty) ||
+               newComputer.Repository.Equals(String.Empty)||
+               newComputer.PcDirectory.Equals(String.Empty))
             {
-                MessageBox.Show($"You must name the computer!");
+                MessageBox.Show($"You must fill the fields!");
+            }else
+            if (_pctolineService.SearchForComputer(selectedLine, newComputer.Name))
+            {
+                MessageBox.Show($"This computer name is taken!");
             }
             else
             {

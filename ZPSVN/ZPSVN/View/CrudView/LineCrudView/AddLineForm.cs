@@ -51,6 +51,10 @@ namespace ZPSVN.View.CrudView.LineCrudView
             if (newLine == null )
             {
                 MessageBox.Show("You must name the line!");
+            }else
+            if (_lineService.SearchForLine(LineName.Text))
+            {
+                MessageBox.Show($"This computer name is taken!");
             }
             else
             {

@@ -1,4 +1,6 @@
-﻿namespace ZPSVN.View.CrudView.ComputersCrudView
+﻿using System.Windows.Forms;
+
+namespace ZPSVN.View.CrudView.ComputersCrudView
 {
     partial class AddComputerForm
     {
@@ -58,6 +60,7 @@
             // computerNameTextBox
             // 
             this.computerNameTextBox.Location = new System.Drawing.Point(44, 134);
+            this.computerNameTextBox.MaxLength = 20;
             this.computerNameTextBox.Name = "computerNameTextBox";
             this.computerNameTextBox.Size = new System.Drawing.Size(186, 22);
             this.computerNameTextBox.TabIndex = 4;
@@ -155,6 +158,7 @@
             // 
             this.attachComputerComboBox.DataSource = this.lineBindingSource;
             this.attachComputerComboBox.DisplayMember = "Name";
+            this.attachComputerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.attachComputerComboBox.FormattingEnabled = true;
             this.attachComputerComboBox.Location = new System.Drawing.Point(44, 218);
             this.attachComputerComboBox.Name = "attachComputerComboBox";

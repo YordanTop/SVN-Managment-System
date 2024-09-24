@@ -12,13 +12,15 @@ using ZPSVN.View.IViews;
 
 namespace ZPSVN.View
 {
-    public partial class TimerView : Form,ITimerView
+    public partial class TimerView : Form, ITimerView
     {
         public TimerView()
         {
             InitializeComponent();
             this.Show();
         }
+        
+
 
         public TextBox TimerTextBox
         {
@@ -31,22 +33,27 @@ namespace ZPSVN.View
                 timerTextBox = value;
             }
         }
-
+        private const int MillisecondsToMinute = 60000;
+        public int TextTimerToMinutes
+        {
+            get
+            {
+                return Convert.ToInt32(TimerTextBox.Text) * MillisecondsToMinute;
+            }
+        }
         public event EventHandler<TimerEventArgs> SetTimer;
+        public event KeyPressEventHandler CheckKeyCharacter;
 
         private void setTimer_Click(object sender, EventArgs e)
         {
-            if (timerTextBox.Text.Equals(String.Empty))
-            {
-                timerTextBox.Text = $"{TimeSpan.TicksPerSecond}";
-            }else if (Convert.ToInt32(timerTextBox.Text) < 0 ||
-                Convert.ToInt32(timerTextBox.Text) == int.MaxValue)
-            {
-                timerTextBox.Text = $"{TimeSpan.TicksPerSecond}";
-            }
 
-            SetTimer?.Invoke(this, new TimerEventArgs(Convert.ToInt32(timerTextBox.Text)));
+            SetTimer?.Invoke(this, new TimerEventArgs(TextTimerToMinutes));
             this.Close();
+        }
+
+        private void timerTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CheckKeyCharacter?.Invoke(this, e);
         }
     }
 }

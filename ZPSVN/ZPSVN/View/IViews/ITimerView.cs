@@ -10,8 +10,10 @@ namespace ZPSVN.View.IViews
 {
     public interface ITimerView
     {
+        int TextTimerToMinutes { get; }
         TextBox TimerTextBox { get; set; }
 
         event EventHandler<TimerEventArgs> SetTimer;
+        event KeyPressEventHandler CheckKeyCharacter;
     }
 }
