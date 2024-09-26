@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace ZPSVN.Displaying_Components
 {
+    /// <summary>
+    /// Prefixed panel for the Lines/Computers
+    /// </summary>
     public class ComponentsPanel:Panel
     {
         public Panel ComponentPanel { get; set; }

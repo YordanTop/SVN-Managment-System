@@ -74,35 +74,6 @@ namespace DataBaseLayer.DataBaseContext
                     .HasCollation("utf8mb4_general_ci");
             });
 
-            modelBuilder.Entity<Pc>(entity =>
-            {
-                entity.ToTable("pc");
-
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasColumnName("name")
-                    .HasColumnType("varchar(20)")
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_general_ci");
-
-                entity.Property(e => e.PcDirectory)
-                    .IsRequired()
-                    .HasColumnName("pcDirectory")
-                    .HasColumnType("text")
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_general_ci");
-
-                entity.Property(e => e.Repository)
-                    .IsRequired()
-                    .HasColumnName("repository")
-                    .HasColumnType("text")
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_general_ci");
-            });
 
             modelBuilder.Entity<Pctoline>(entity =>
             {

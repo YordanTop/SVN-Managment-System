@@ -221,7 +221,6 @@
     <Compile Include="DTOs\Timer.cs" />
     <Compile Include="Models\Efmigrationshistory.cs" />
     <Compile Include="Models\Line.cs" />
-    <Compile Include="Models\Pc.cs" />
     <Compile Include="Models\Pctoline.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

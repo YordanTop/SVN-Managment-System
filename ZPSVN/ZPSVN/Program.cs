@@ -36,16 +36,17 @@ namespace ZPSVN
             SvnStatusInfoContext context = new SvnStatusInfoContext(dataBaseConnectingString);
 
             //Implementing the MVP concept
+            //Views
             ILoginView loginView = new LoginView();
             IMainView view = new MainView();
 
+            //Project Services
             LoginService loginService = new LoginService(new UserRepository(context));
             LineService lineService = new LineService(new LineRepository(context));
             PctolineService pctolineService = new PctolineService(new PctolineRepository(context));
             SvnService svnService = new SvnService(lineService,pctolineService);
 
-
-
+            //Presenters
             new LoginPresenter(loginView,loginService);
             loginView.MainView = view;
             new MainPresenter(loginView.MainView, svnService, lineService, pctolineService);
