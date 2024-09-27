@@ -1,12 +1,6 @@
 ﻿using DataBaseLayer.Models;
 using ServiceLayer.Repositories;
 using ServiceLayer.Services.CRUD_Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ServiceLayer.Services.LoginService

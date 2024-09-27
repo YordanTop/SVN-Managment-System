@@ -2,27 +2,17 @@
 using DataBaseLayer.DTOs;
 using DataConverter.Convert;
 using DataRetrieving.SVN;
-using ServiceLayer.Repositories;
-using ServiceLayer.Repositories.IRepos;
 using Svn;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ServiceLayer.Services.CRUD_Services;
-using System.IO;
 
 namespace ServiceLayer.Services.SvnService
 {
     public class SvnService: IService
     {
-        private LineService _lineRepository;
-        private PctolineService _pcRepository;
-        public SvnService(LineService lineRepository, PctolineService pcRepository)
+
+        public SvnService() 
         {
-            _lineRepository = lineRepository;
-            _pcRepository = pcRepository;
         }
 
 

@@ -1,12 +1,6 @@
 ﻿using FolderExpression;
 using ServiceLayer.Services.SvnService;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using ZPSVN.Presentation.EventArguments;
 using ZPSVN.View;
 using ZPSVN.View.IViews;

@@ -1,11 +1,6 @@
 ﻿using DataBaseLayer.Models;
 using ServiceLayer.Repositories;
-using ServiceLayer.Repositories.IRepos;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static DataBaseLayer.Models.User;
 
 namespace ServiceLayer.Services.CRUD_Services

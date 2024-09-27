@@ -147,6 +147,7 @@
     <Compile Include="Services\CRUD Services\UserService.cs" />
     <Compile Include="Services\IServices\IService.cs" />
     <Compile Include="Services\LoginService\LoginService.cs" />
+    <Compile Include="Services\NetworkService\NetworkService.cs" />
     <Compile Include="Services\SvnService\SvnService.cs" />
     <Compile Include="Services\TimerService\TimerService.cs" />
   </ItemGroup>

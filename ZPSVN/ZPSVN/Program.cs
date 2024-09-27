@@ -1,15 +1,12 @@
 ﻿using DataBaseLayer.DataBaseContext;
 using ServiceLayer.Repositories;
-using ServiceLayer.Repositories.IRepos;
 using ServiceLayer.Services;
 using ServiceLayer.Services.CRUD_Services;
 using ServiceLayer.Services.LoginService;
 using ServiceLayer.Services.SvnService;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 using ZPSVN.Presentation;
 using ZPSVN.View;
@@ -27,33 +24,55 @@ namespace ZPSVN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            
+
 
             //Wairing the database
             string dataBaseConnectingString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
 
-            SvnStatusInfoContext context = new SvnStatusInfoContext(dataBaseConnectingString);
+            try
+            {
+                SvnStatusInfoContext context = new SvnStatusInfoContext(dataBaseConnectingString);
 
-            //Implementing the MVP concept
-            //Views
-            ILoginView loginView = new LoginView();
-            IMainView view = new MainView();
+                if (NetworkService.IsOnline() is false)
+                {
+                    throw new PingException("You are not connected to a network." +
+                                            "Please check host provider or if you are disable the internet connection.");
+                }
 
-            //Project Services
-            LoginService loginService = new LoginService(new UserRepository(context));
-            LineService lineService = new LineService(new LineRepository(context));
-            PctolineService pctolineService = new PctolineService(new PctolineRepository(context));
-            SvnService svnService = new SvnService(lineService,pctolineService);
+                if (context.Database.CanConnect() is false)
+                {
+                    throw new Exception();
+                }
 
-            //Presenters
-            new LoginPresenter(loginView,loginService);
-            loginView.MainView = view;
-            new MainPresenter(loginView.MainView, svnService, lineService, pctolineService);
+                //Implementing the MVP concept
+                //Views
+                ILoginView loginView = new LoginView();
+                IMainView view = new MainView();
 
-            Application.Run((Form)loginView);
-            
-            
+                //Project Services
+                LoginService loginService = new LoginService(new UserRepository(context));
+                LineService lineService = new LineService(new LineRepository(context));
+                PctolineService pctolineService = new PctolineService(new PctolineRepository(context));
+                SvnService svnService = new SvnService();
+
+                //Presenters
+                new LoginPresenter(loginView, loginService);
+                loginView.MainView = view;
+                new MainPresenter(loginView.MainView, svnService, lineService, pctolineService);
+
+                Application.Run((Form)loginView);
+            }
+            catch (PingException pingException)
+            {
+                MessageBox.Show("You are not connected to a network. " +
+                                "Please check host provider or if you are disable the internet connection.",
+                                "Provider Error!");
+            }
+            catch (Exception entityException)
+            {
+                MessageBox.Show("The data connection has failed. Please check the database host if it's running.", "Server Error!");
+            }
+
         }
     }
 }

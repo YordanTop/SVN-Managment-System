@@ -1,7 +1,4 @@
 ﻿using Svn;
-using System;
-using System.Diagnostics;
-using System.Reflection.Emit;
 
 namespace DataRetrieving.SVN
 {

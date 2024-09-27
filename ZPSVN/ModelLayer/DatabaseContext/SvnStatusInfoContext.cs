@@ -1,8 +1,5 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using DataBaseLayer.Models;
-using Microsoft.Extensions.DependencyInjection;
 
 
 namespace DataBaseLayer.DataBaseContext
